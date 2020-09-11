@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  	resources :users
 	root to: 'book#list'
 	get 'book/list'
 	get 'book/new'
