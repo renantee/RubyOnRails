@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Demo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Demo: File Uploading</title>
+		<%= stylesheet_link_tag "resumes" %>
+		<%= csrf_meta_tags %>
+	</head>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+		<div class = "container" style = "padding-top:20px;">
+			<%= yield %>
+		</div>
+	</body>
 </html>
