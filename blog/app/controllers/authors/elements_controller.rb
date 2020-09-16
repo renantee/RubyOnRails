@@ -27,10 +27,7 @@ module Authors
 		# DELETE /elements/1.json
 		def destroy
 			@element.destroy
-			respond_to do |format|
-				format.html { redirect_to elements_url, notice: 'Element was successfully destroyed.' }
-				format.json { head :no_content }
-			end
+			redirect_to edit_post_path(@element.post)
 		end
 
 		private
@@ -46,7 +43,7 @@ module Authors
 
 		# Only allow a list of trusted parameters through.
 		def element_params
-			params.require(:element).permit(:element_type, :content)
+			params.require(:element).permit(:element_type, :content, :image)
 		end
 	end
 end
