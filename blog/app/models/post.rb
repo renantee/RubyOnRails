@@ -1,9 +1,16 @@
 class Post < ApplicationRecord
-  belongs_to :author
-  has_many :elements
+	extend FriendlyId
+	friendly_id :title, use: [:slugged, :history, :finders]
 
-  has_one_attached :header_image
+	belongs_to :author
+	has_many :elements
 
-  validates_presence_of :title, :description
-  validates_length_of :description, within: 50..250
+	has_one_attached :header_image
+
+	validates_presence_of :title, :description
+	validates_length_of :description, within: 50..250
+
+	def should_generate_new_friendly_id?
+		title_changed?
+	end
 end
