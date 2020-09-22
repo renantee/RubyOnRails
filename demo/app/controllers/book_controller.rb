@@ -1,5 +1,6 @@
 class BookController < ApplicationController
 	layout 'standard'
+	before_action :set_subjects, only: [:list, :new, :create, :edit, :update]
 
 	def list
 		@books = Book.all
@@ -11,7 +12,6 @@ class BookController < ApplicationController
 
 	def new
 		@book = Book.new
-		@subjects = Subject.all
 	end
 
 	def book_params
@@ -24,14 +24,12 @@ class BookController < ApplicationController
 		if @book.save
 			redirect_to :action => 'list'
 		else
-			@subjects = Subject.all
 			render :action => 'new'
 		end
 	end
 	
 	def edit
 		@book = Book.find(params[:id])
-		@subjects = Subject.all
 	end
 	
 	def book_param
@@ -44,7 +42,6 @@ class BookController < ApplicationController
 		if @book.update_attributes(book_param)
 			redirect_to :action => 'show', :id => @book
 		else
-			@subjects = Subject.all
 			render :action => 'edit'
 		end
 	end
@@ -56,6 +53,12 @@ class BookController < ApplicationController
 	
 	def show_subjects
 		@subject = Subject.find(params[:id])
+	end
+
+	private
+	# Use callbacks to share common setup or constraints between actions.
+	def set_subjects
+		@subjects = Subject.all
 	end
 
 end
