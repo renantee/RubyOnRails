@@ -1,0 +1,12 @@
+.sessions,
+.registrations,
+.passwords {
+	h1 {
+		font-size: 1.75rem;
+	}
+	#error_explanation {
+		li {
+			color: red;
+		}
+	}
+}
