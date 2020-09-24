@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   	resources :users
+  	get 'こんにちは', to: 'book#list'
 	root to: 'book#list'
 	get 'book/list'
 	get 'book/new'

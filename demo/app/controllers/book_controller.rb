@@ -4,6 +4,7 @@ class BookController < ApplicationController
 
 	def list
 		@books = Book.all
+		p @books.inspect
 	end
 
 	def show
@@ -20,6 +21,8 @@ class BookController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
+		p @book.inspect
+		@book.try(:next)
 
 		if @book.save
 			redirect_to :action => 'list'
