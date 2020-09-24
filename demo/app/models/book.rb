@@ -5,4 +5,6 @@ class Book < ApplicationRecord
 
 	validates :title, presence: true
 	validates :price, numericality: true
+
+	delegate :id, :name, to: :subject, prefix: :subject
 end
