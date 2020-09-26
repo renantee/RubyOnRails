@@ -1,7 +1,7 @@
 <ul id = "subjects">
-   <% Subject.all.each do |c| %>
-   <li><%= link_to c.name, :action => "show_subjects", :id => c.id %></li>
-   <% end %>
+	<% @subjects.each do |c| %>
+		<li><%= link_to c.subject, :action => "show_subjects", :id => c.id %></li>
+	<% end %>
 </ul>
 
 <% if @books.blank? %>

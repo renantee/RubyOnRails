@@ -15,5 +15,11 @@ module Demo
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Active Job adapter
+    config.active_job.queue_adapter = :sidekiq
+
+    # Action Cable to listen for WebSocket requests
+    config.action_cable.mount_path = '/websocket'
   end
 end

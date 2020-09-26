@@ -1,0 +1,9 @@
+<h1><%= t :hello_world %></h1>
+<p><%= flash[:notice] %></p>
+<p><%= I18n.t 'welcome', app_name: 'book store' %></p>
+<p><%= I18n.t 'welcome', deep_interpolation: true, app_name: 'book store' %></p>
+# Lazy look
+<p><%= t '.title' %></p>
+<p><%= t('welcome.title') %></p>
+<p><%= t('welcome.html') %></p>
+<p><%= t('hello_html') %></p>
