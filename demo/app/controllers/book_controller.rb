@@ -25,7 +25,7 @@ class BookController < ApplicationController
 		@book.try(:next)
 
 		if @book.save
-			redirect_to :action => 'list'
+			redirect_to :action => 'list', notice: t('.success')
 		else
 			render :action => 'new'
 		end

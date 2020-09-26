@@ -29,10 +29,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello_world: Hello world!
-  hello_flash: Hello flash!
-  hello_html: <b>hello!</b>
+pirate:
+  hello_world: Ahoy World
+  hello_flash: Ahoy Flash
   success:
     'true':  'True!'
     'on':    'On!'
@@ -41,10 +40,3 @@ en:
     true:    'True!'
     off:     'Off!'
     false:   'False!'
-  welcome:
-    html: <b>Welcome!</b>
-    title: <b>Welcome!</b>
-    content: Welcome to the %{app_name}
-  book:
-    create:
-      success: Book created!
