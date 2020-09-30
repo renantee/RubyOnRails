@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<%= debug @user %>
+<%= simple_format @user.to_yaml %>
+<%= @user.inspect %>
 
 <p>
   <strong>Name:</strong>
@@ -17,7 +20,9 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= image_tag(url_for(@user.avatar)) %>
+  <% if @user.avatar.present? %>
+    <%= image_tag(url_for(@user.avatar)) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
