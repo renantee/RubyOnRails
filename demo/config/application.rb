@@ -21,5 +21,9 @@ module Demo
 
     # Action Cable to listen for WebSocket requests
     config.action_cable.mount_path = '/websocket'
+
+    # Set time zone to "Hong Kong"
+    #config.time_zone = 'Hong Kong'
+    config.time_zone = 'Mountain Time (US & Canada)'
   end
 end

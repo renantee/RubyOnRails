@@ -14,6 +14,20 @@ class BookController < ApplicationController
 
 	def new
 		@book = Book.new
+		console do
+			# this block is called only when running console,
+			# so we can safely require pry here
+			require "pry"
+			def hello()
+				puts "hello world!"
+			end
+
+			# start a REPL session
+			binding.pry
+
+			# program resumes here (after pry session)
+			puts "program resumes here."
+		end
 	end
 
 	def book_params
