@@ -54,3 +54,5 @@ gem 'bootstrap-sass', '>= 3.4.1'
 
 # Sidekiq
 gem 'sidekiq'
+
+gem 'yaffle', path: 'yaffle'
