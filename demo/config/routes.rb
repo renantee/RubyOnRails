@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   root to: "home#index"
   resources :users  
   scope "(:locale)", locale: /en|pirate/ do

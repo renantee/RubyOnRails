@@ -25,5 +25,13 @@ module Demo
     # Set time zone to "Hong Kong"
     #config.time_zone = 'Hong Kong'
     config.time_zone = 'Mountain Time (US & Canada)'
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :erb
+      g.test_framework  :test_unit, fixture: false
+      g.stylesheets     false
+      g.helper          :my_helper
+    end
   end
 end
